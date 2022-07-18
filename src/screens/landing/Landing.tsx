@@ -107,7 +107,7 @@ const Landing: React.FC = ({ navigation }: any) => {
       />
       <TouchableOpacity
         onPress={handleSubmit}
-        style={styles.button}
+        style={data.asteroid === "" ? styles.disabled : styles.button}
         activeOpacity={0.7}
         disabled={data.asteroid === ""}
       >
@@ -148,7 +148,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   button: {
-    backgroundColor: "black",
+    backgroundColor: "#231942",
+    padding: 10,
+    borderRadius: 5,
+    margin: 10,
+  },
+  disabled: {
+    backgroundColor: "#5e548e",
     padding: 10,
     borderRadius: 5,
     margin: 10,
